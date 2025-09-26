@@ -1,1029 +1,1134 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Krishi Kerala - Advanced Agricultural Portal</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
     <style>
-        /* Reset and Base Styles */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
-        
-        :root {
-            --primary: #2e7d32;
-            --primary-light: #4caf50;
-            --secondary: #ff9800;
-            --dark: #2e3d32;
-            --light: #f5f9f5;
-            --grey: #e0e0e0;
-            --white: #ffffff;
-            --gold: #ffd700;
-            --blue: #2196f3;
-            --purple: #9c27b0;
-        }
-        
-        body {
-            background-color: var(--light);
-            color: var(--dark);
-            line-height: 1.6;
-        }
-        
-        .container {
-            width: 100%;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-        
-        /* Top Strip Styles */
-        .top-strip {
-            background-color: #0a5e2d;
-            color: white;
-            padding: 8px 0;
-            font-size: 14px;
-        }
-        
-        .top-strip-content {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        
-        .govt-text {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-        
-        .govt-text span {
-            font-weight: 500;
-        }
-        
-        .language-switcher {
-            display: flex;
-            gap: 5px;
-        }
-        
-        .lang-btn {
-            background: transparent;
-            border: 1px solid rgba(255, 255, 255, 0.3);
-            color: white;
-            padding: 4px 12px;
-            border-radius: 4px;
-            cursor: pointer;
-            font-size: 12px;
-            transition: all 0.3s;
-        }
-        
-        .lang-btn:hover {
-            background-color: rgba(255, 255, 255, 0.1);
-        }
-        
-        .lang-btn.active {
-            background-color: var(--gold);
-            color: var(--dark);
-            border-color: var(--gold);
-        }
-        
-        /* Header Styles */
-        header {
-            background-color: white;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-            padding: 15px 0;
-        }
-        
+      /* Reset and Base Styles */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      }
+
+      :root {
+        --primary: #2e7d32;
+        --primary-light: #4caf50;
+        --secondary: #ff9800;
+        --dark: #2e3d32;
+        --light: #f5f9f5;
+        --grey: #e0e0e0;
+        --white: #ffffff;
+        --gold: #ffd700;
+        --blue: #2196f3;
+        --purple: #9c27b0;
+      }
+
+      body {
+        background-color: var(--light);
+        color: var(--dark);
+        line-height: 1.6;
+      }
+
+      .container {
+        width: 100%;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+      }
+
+      /* Top Strip Styles */
+      .top-strip {
+        background-color: #0a5e2d;
+        color: white;
+        padding: 8px 0;
+        font-size: 14px;
+      }
+
+      .top-strip-content {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .govt-text {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+      }
+
+      .govt-text span {
+        font-weight: 500;
+      }
+
+      .language-switcher {
+        display: flex;
+        gap: 5px;
+      }
+
+      .lang-btn {
+        background: transparent;
+        border: 1px solid rgba(255, 255, 255, 0.3);
+        color: white;
+        padding: 4px 12px;
+        border-radius: 4px;
+        cursor: pointer;
+        font-size: 12px;
+        transition: all 0.3s;
+      }
+
+      .lang-btn:hover {
+        background-color: rgba(255, 255, 255, 0.1);
+      }
+
+      .lang-btn.active {
+        background-color: var(--gold);
+        color: var(--dark);
+        border-color: var(--gold);
+      }
+
+      /* Header Styles */
+      header {
+        background-color: white;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        padding: 15px 0;
+      }
+
+      .header-content {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .logo {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+      }
+
+      .logo-icon {
+        font-size: 24px;
+        color: var(--primary);
+      }
+
+      .logo-text {
+        font-size: 20px;
+        font-weight: bold;
+        color: var(--primary);
+      }
+
+      nav ul {
+        display: flex;
+        list-style: none;
+        gap: 25px;
+      }
+
+      nav a {
+        text-decoration: none;
+        color: var(--dark);
+        font-weight: 500;
+        transition: color 0.3s;
+        padding: 8px 5px;
+        position: relative;
+      }
+
+      nav a:hover {
+        color: var(--primary);
+      }
+
+      nav a.active {
+        color: var(--primary);
+        font-weight: 600;
+      }
+
+      nav a.active::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 3px;
+        background-color: var(--primary);
+        border-radius: 3px;
+      }
+
+      /* Hero Section with Background Image */
+      .hero {
+        height: 500px;
+        background-image: linear-gradient(
+            rgba(0, 0, 0, 0.5),
+            rgba(0, 0, 0, 0.3)
+          ),
+          url("https://images.pexels.com/photos/1509607/pexels-photo-1509607.jpeg");
+        background-size: cover;
+        background-position: center;
+        color: white;
+        display: flex;
+        align-items: center;
+        position: relative;
+      }
+
+      .hero-content {
+        max-width: 600px;
+        padding: 0 30px;
+      }
+
+      .hero h1 {
+        font-size: 2.8rem;
+        margin-bottom: 20px;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+      }
+
+      .hero p {
+        font-size: 1.2rem;
+        margin-bottom: 30px;
+        text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+      }
+
+      .hero-buttons {
+        display: flex;
+        gap: 15px;
+      }
+
+      .btn {
+        padding: 12px 24px;
+        border: none;
+        border-radius: 8px;
+        font-size: 16px;
+        font-weight: 500;
+        cursor: pointer;
+        transition: all 0.3s;
+      }
+
+      .btn-primary {
+        background-color: var(--primary);
+        color: white;
+      }
+
+      .btn-primary:hover {
+        background-color: var(--primary-light);
+      }
+
+      .btn-secondary {
+        background-color: transparent;
+        color: white;
+        border: 2px solid white;
+      }
+
+      .btn-secondary:hover {
+        background-color: rgba(255, 255, 255, 0.1);
+      }
+
+      /* Features Section */
+      .features {
+        padding: 60px 0;
+      }
+
+      .section-title {
+        text-align: center;
+        margin-bottom: 40px;
+        color: var(--primary);
+      }
+
+      .features-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 30px;
+      }
+
+      .feature-card {
+        background-color: white;
+        border-radius: 12px;
+        padding: 25px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        text-align: center;
+        transition: transform 0.3s;
+      }
+
+      .feature-card:hover {
+        transform: translateY(-5px);
+      }
+
+      .feature-icon {
+        font-size: 40px;
+        color: var(--primary);
+        margin-bottom: 20px;
+      }
+
+      .feature-card h3 {
+        margin-bottom: 15px;
+        color: var(--primary);
+      }
+
+      /* New Features Section */
+      .advanced-features {
+        padding: 60px 0;
+        background-color: #f1f8e9;
+      }
+
+      .feature-tabs {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 15px;
+        margin-bottom: 30px;
+        justify-content: center;
+      }
+
+      .feature-tab {
+        padding: 12px 24px;
+        background: white;
+        border-radius: 30px;
+        cursor: pointer;
+        font-weight: 500;
+        box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+        transition: all 0.3s;
+      }
+
+      .feature-tab.active {
+        background-color: var(--primary);
+        color: white;
+      }
+
+      .feature-content {
+        display: none;
+        background: white;
+        border-radius: 12px;
+        padding: 30px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+      }
+
+      .feature-content.active {
+        display: block;
+      }
+
+      .feature-content h3 {
+        color: var(--primary);
+        margin-bottom: 20px;
+        font-size: 1.5rem;
+      }
+
+      .content-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 20px;
+      }
+
+      .content-item {
+        padding: 20px;
+        border-radius: 8px;
+        background-color: #f9f9f9;
+      }
+
+      .content-item h4 {
+        color: var(--primary);
+        margin-bottom: 10px;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+      }
+
+      /* Market Prices Section */
+      .market-prices {
+        padding: 60px 0;
+      }
+
+      .region-selector {
+        display: flex;
+        justify-content: center;
+        margin-bottom: 30px;
+        gap: 10px;
+        flex-wrap: wrap;
+      }
+
+      .region-btn {
+        padding: 8px 16px;
+        background: white;
+        border: 1px solid var(--grey);
+        border-radius: 20px;
+        cursor: pointer;
+        transition: all 0.3s;
+      }
+
+      .region-btn.active {
+        background-color: var(--primary);
+        color: white;
+        border-color: var(--primary);
+      }
+
+      .price-table {
+        width: 100%;
+        border-collapse: collapse;
+        background: white;
+        border-radius: 8px;
+        overflow: hidden;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+      }
+
+      .price-table th,
+      .price-table td {
+        padding: 15px;
+        text-align: left;
+        border-bottom: 1px solid var(--grey);
+      }
+
+      .price-table th {
+        background-color: var(--primary);
+        color: white;
+      }
+
+      .price-table tr:last-child td {
+        border-bottom: none;
+      }
+
+      /* Disease Detection Section - UPDATED */
+      .disease-detection {
+        padding: 60px 0;
+        background-color: #f1f8e9;
+      }
+
+      .upload-area {
+        border: 2px dashed var(--primary);
+        border-radius: 12px;
+        padding: 40px;
+        text-align: center;
+        margin-bottom: 30px;
+        background-color: #e8f5e9; /* Changed from white to light green */
+        cursor: pointer;
+        transition: all 0.3s;
+      }
+
+      .upload-area:hover {
+        background-color: #c8e6c9; /* Darker green on hover */
+        border-color: var(--primary-light);
+      }
+
+      .upload-icon {
+        font-size: 50px;
+        color: var(--primary);
+        margin-bottom: 15px;
+      }
+
+      .result-area {
+        background: white;
+        border-radius: 12px;
+        padding: 30px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+      }
+
+      /* Query Interface */
+      .query-interface {
+        padding: 60px 0;
+        background: linear-gradient(to bottom, #ffffff, #f1f8e9);
+      }
+
+      .input-methods {
+        display: flex;
+        gap: 15px;
+        margin-bottom: 20px;
+        justify-content: center;
+      }
+
+      .input-btn {
+        flex: 1;
+        max-width: 200px;
+        padding: 15px;
+        border: 2px solid var(--grey);
+        border-radius: 8px;
+        background: white;
+        cursor: pointer;
+        text-align: center;
+        transition: all 0.3s;
+      }
+
+      .input-btn:hover {
+        border-color: var(--primary-light);
+        background-color: #f1f8e9;
+      }
+
+      .input-btn.active {
+        border-color: var(--primary);
+        background-color: #e8f5e9;
+        font-weight: bold;
+      }
+
+      .input-btn i {
+        font-size: 24px;
+        margin-bottom: 8px;
+        display: block;
+        color: var(--primary);
+      }
+
+      .query-box {
+        display: flex;
+        gap: 10px;
+        margin-bottom: 20px;
+      }
+
+      .query-input {
+        flex: 1;
+        padding: 15px;
+        border: 2px solid var(--grey);
+        border-radius: 8px;
+        font-size: 16px;
+        resize: none;
+        min-height: 100px;
+      }
+
+      .query-input:focus {
+        outline: none;
+        border-color: var(--primary);
+      }
+
+      .action-buttons {
+        display: flex;
+        gap: 10px;
+        justify-content: center;
+      }
+
+      /* Response Section */
+      .response-section {
+        padding: 40px 0;
+        background-color: #f1f8e9;
+      }
+
+      .response-card {
+        background-color: white;
+        border-radius: 12px;
+        padding: 25px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        margin-bottom: 30px;
+      }
+
+      .response-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 20px;
+        padding-bottom: 15px;
+        border-bottom: 1px solid var(--grey);
+      }
+
+      .response-content {
+        line-height: 1.8;
+      }
+
+      .response-content h4 {
+        color: var(--primary);
+        margin: 15px 0 10px;
+      }
+
+      .response-content ul {
+        margin-left: 20px;
+        margin-bottom: 15px;
+      }
+
+      /* Footer */
+      footer {
+        background-color: var(--dark);
+        color: white;
+        padding: 40px 0 20px;
+      }
+
+      .footer-content {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 30px;
+        margin-bottom: 30px;
+      }
+
+      .footer-column h3 {
+        margin-bottom: 20px;
+        color: var(--primary-light);
+      }
+
+      .footer-column ul {
+        list-style: none;
+      }
+
+      .footer-column ul li {
+        margin-bottom: 10px;
+      }
+
+      .footer-column a {
+        color: #ccc;
+        text-decoration: none;
+        transition: color 0.3s;
+      }
+
+      .footer-column a:hover {
+        color: white;
+      }
+
+      .copyright {
+        text-align: center;
+        padding-top: 20px;
+        border-top: 1px solid #4a5c4e;
+        color: #ccc;
+        font-size: 14px;
+      }
+
+      /* Responsive Design */
+      @media (max-width: 768px) {
         .header-content {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
+          flex-direction: column;
+          gap: 15px;
         }
-        
-        .logo {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-        
-        .logo-icon {
-            font-size: 24px;
-            color: var(--primary);
-        }
-        
-        .logo-text {
-            font-size: 20px;
-            font-weight: bold;
-            color: var(--primary);
-        }
-        
+
         nav ul {
-            display: flex;
-            list-style: none;
-            gap: 25px;
+          gap: 15px;
+          flex-wrap: wrap;
+          justify-content: center;
         }
-        
-        nav a {
-            text-decoration: none;
-            color: var(--dark);
-            font-weight: 500;
-            transition: color 0.3s;
-            padding: 8px 5px;
-            position: relative;
-        }
-        
-        nav a:hover {
-            color: var(--primary);
-        }
-        
-        nav a.active {
-            color: var(--primary);
-            font-weight: 600;
-        }
-        
-        nav a.active::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            height: 3px;
-            background-color: var(--primary);
-            border-radius: 3px;
-        }
-        
-        /* Hero Section with Background Image */
+
         .hero {
-            height: 500px;
-            background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.3)), url('https://images.pexels.com/photos/1509607/pexels-photo-1509607.jpeg');
-            background-size: cover;
-            background-position: center;
-            color: white;
-            display: flex;
-            align-items: center;
-            position: relative;
+          height: 400px;
+          text-align: center;
         }
-        
+
         .hero-content {
-            max-width: 600px;
-            padding: 0 30px;
+          padding: 0 15px;
         }
-        
+
         .hero h1 {
-            font-size: 2.8rem;
-            margin-bottom: 20px;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+          font-size: 2.2rem;
         }
-        
-        .hero p {
-            font-size: 1.2rem;
-            margin-bottom: 30px;
-            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
-        }
-        
+
         .hero-buttons {
-            display: flex;
-            gap: 15px;
+          justify-content: center;
+          flex-wrap: wrap;
         }
-        
-        .btn {
-            padding: 12px 24px;
-            border: none;
-            border-radius: 8px;
-            font-size: 16px;
-            font-weight: 500;
-            cursor: pointer;
-            transition: all 0.3s;
+
+        .top-strip-content {
+          flex-direction: column;
+          gap: 8px;
+          text-align: center;
         }
-        
-        .btn-primary {
-            background-color: var(--primary);
-            color: white;
-        }
-        
-        .btn-primary:hover {
-            background-color: var(--primary-light);
-        }
-        
-        .btn-secondary {
-            background-color: transparent;
-            color: white;
-            border: 2px solid white;
-        }
-        
-        .btn-secondary:hover {
-            background-color: rgba(255, 255, 255, 0.1);
-        }
-        
-        /* Features Section */
-        .features {
-            padding: 60px 0;
-        }
-        
-        .section-title {
-            text-align: center;
-            margin-bottom: 40px;
-            color: var(--primary);
-        }
-        
-        .features-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 30px;
-        }
-        
-        .feature-card {
-            background-color: white;
-            border-radius: 12px;
-            padding: 25px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-            text-align: center;
-            transition: transform 0.3s;
-        }
-        
-        .feature-card:hover {
-            transform: translateY(-5px);
-        }
-        
-        .feature-icon {
-            font-size: 40px;
-            color: var(--primary);
-            margin-bottom: 20px;
-        }
-        
-        .feature-card h3 {
-            margin-bottom: 15px;
-            color: var(--primary);
-        }
-        
-        /* New Features Section */
-        .advanced-features {
-            padding: 60px 0;
-            background-color: #f1f8e9;
-        }
-        
+
         .feature-tabs {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 15px;
-            margin-bottom: 30px;
-            justify-content: center;
+          flex-direction: column;
+          align-items: center;
         }
-        
-        .feature-tab {
-            padding: 12px 24px;
-            background: white;
-            border-radius: 30px;
-            cursor: pointer;
-            font-weight: 500;
-            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
-            transition: all 0.3s;
-        }
-        
-        .feature-tab.active {
-            background-color: var(--primary);
-            color: white;
-        }
-        
-        .feature-content {
-            display: none;
-            background: white;
-            border-radius: 12px;
-            padding: 30px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-        }
-        
-        .feature-content.active {
-            display: block;
-        }
-        
-        .feature-content h3 {
-            color: var(--primary);
-            margin-bottom: 20px;
-            font-size: 1.5rem;
-        }
-        
+
         .content-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 20px;
+          grid-template-columns: 1fr;
         }
-        
-        .content-item {
-            padding: 20px;
-            border-radius: 8px;
-            background-color: #f9f9f9;
-        }
-        
-        .content-item h4 {
-            color: var(--primary);
-            margin-bottom: 10px;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-        
-        /* Market Prices Section */
-        .market-prices {
-            padding: 60px 0;
-        }
-        
-        .region-selector {
-            display: flex;
-            justify-content: center;
-            margin-bottom: 30px;
-            gap: 10px;
-            flex-wrap: wrap;
-        }
-        
-        .region-btn {
-            padding: 8px 16px;
-            background: white;
-            border: 1px solid var(--grey);
-            border-radius: 20px;
-            cursor: pointer;
-            transition: all 0.3s;
-        }
-        
-        .region-btn.active {
-            background-color: var(--primary);
-            color: white;
-            border-color: var(--primary);
-        }
-        
-        .price-table {
-            width: 100%;
-            border-collapse: collapse;
-            background: white;
-            border-radius: 8px;
-            overflow: hidden;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-        }
-        
-        .price-table th, .price-table td {
-            padding: 15px;
-            text-align: left;
-            border-bottom: 1px solid var(--grey);
-        }
-        
-        .price-table th {
-            background-color: var(--primary);
-            color: white;
-        }
-        
-        .price-table tr:last-child td {
-            border-bottom: none;
-        }
-        
-        /* Disease Detection Section - UPDATED */
-        .disease-detection {
-            padding: 60px 0;
-            background-color: #f1f8e9;
-        }
-        
-        .upload-area {
-            border: 2px dashed var(--primary);
-            border-radius: 12px;
-            padding: 40px;
-            text-align: center;
-            margin-bottom: 30px;
-            background-color: #e8f5e9; /* Changed from white to light green */
-            cursor: pointer;
-            transition: all 0.3s;
-        }
-        
-        .upload-area:hover {
-            background-color: #c8e6c9; /* Darker green on hover */
-            border-color: var(--primary-light);
-        }
-        
-        .upload-icon {
-            font-size: 50px;
-            color: var(--primary);
-            margin-bottom: 15px;
-        }
-        
-        .result-area {
-            background: white;
-            border-radius: 12px;
-            padding: 30px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-        }
-        
-        /* Query Interface */
-        .query-interface {
-            padding: 60px 0;
-            background: linear-gradient(to bottom, #ffffff, #f1f8e9);
-        }
-        
+
         .input-methods {
-            display: flex;
-            gap: 15px;
-            margin-bottom: 20px;
-            justify-content: center;
+          flex-direction: column;
+          align-items: center;
         }
-        
+
         .input-btn {
-            flex: 1;
-            max-width: 200px;
-            padding: 15px;
-            border: 2px solid var(--grey);
-            border-radius: 8px;
-            background: white;
-            cursor: pointer;
-            text-align: center;
-            transition: all 0.3s;
+          width: 100%;
+          max-width: none;
         }
-        
-        .input-btn:hover {
-            border-color: var(--primary-light);
-            background-color: #f1f8e9;
-        }
-        
-        .input-btn.active {
-            border-color: var(--primary);
-            background-color: #e8f5e9;
-            font-weight: bold;
-        }
-        
-        .input-btn i {
-            font-size: 24px;
-            margin-bottom: 8px;
-            display: block;
-            color: var(--primary);
-        }
-        
-        .query-box {
-            display: flex;
-            gap: 10px;
-            margin-bottom: 20px;
-        }
-        
-        .query-input {
-            flex: 1;
-            padding: 15px;
-            border: 2px solid var(--grey);
-            border-radius: 8px;
-            font-size: 16px;
-            resize: none;
-            min-height: 100px;
-        }
-        
-        .query-input:focus {
-            outline: none;
-            border-color: var(--primary);
-        }
-        
+
         .action-buttons {
-            display: flex;
-            gap: 10px;
-            justify-content: center;
+          flex-direction: column;
         }
-        
-        /* Response Section */
-        .response-section {
-            padding: 40px 0;
-            background-color: #f1f8e9;
-        }
-        
-        .response-card {
-            background-color: white;
-            border-radius: 12px;
-            padding: 25px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-            margin-bottom: 30px;
-        }
-        
-        .response-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 20px;
-            padding-bottom: 15px;
-            border-bottom: 1px solid var(--grey);
-        }
-        
-        .response-content {
-            line-height: 1.8;
-        }
-        
-        .response-content h4 {
-            color: var(--primary);
-            margin: 15px 0 10px;
-        }
-        
-        .response-content ul {
-            margin-left: 20px;
-            margin-bottom: 15px;
-        }
-        
-        /* Footer */
-        footer {
-            background-color: var(--dark);
-            color: white;
-            padding: 40px 0 20px;
-        }
-        
-        .footer-content {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 30px;
-            margin-bottom: 30px;
-        }
-        
-        .footer-column h3 {
-            margin-bottom: 20px;
-            color: var(--primary-light);
-        }
-        
-        .footer-column ul {
-            list-style: none;
-        }
-        
-        .footer-column ul li {
-            margin-bottom: 10px;
-        }
-        
-        .footer-column a {
-            color: #ccc;
-            text-decoration: none;
-            transition: color 0.3s;
-        }
-        
-        .footer-column a:hover {
-            color: white;
-        }
-        
-        .copyright {
-            text-align: center;
-            padding-top: 20px;
-            border-top: 1px solid #4a5c4e;
-            color: #ccc;
-            font-size: 14px;
-        }
-        
-        /* Responsive Design */
-        @media (max-width: 768px) {
-            .header-content {
-                flex-direction: column;
-                gap: 15px;
-            }
-            
-            nav ul {
-                gap: 15px;
-                flex-wrap: wrap;
-                justify-content: center;
-            }
-            
-            .hero {
-                height: 400px;
-                text-align: center;
-            }
-            
-            .hero-content {
-                padding: 0 15px;
-            }
-            
-            .hero h1 {
-                font-size: 2.2rem;
-            }
-            
-            .hero-buttons {
-                justify-content: center;
-                flex-wrap: wrap;
-            }
-            
-            .top-strip-content {
-                flex-direction: column;
-                gap: 8px;
-                text-align: center;
-            }
-            
-            .feature-tabs {
-                flex-direction: column;
-                align-items: center;
-            }
-            
-            .content-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            .input-methods {
-                flex-direction: column;
-                align-items: center;
-            }
-            
-            .input-btn {
-                width: 100%;
-                max-width: none;
-            }
-            
-            .action-buttons {
-                flex-direction: column;
-            }
-        }
+      }
     </style>
-</head>
-<body>
+  </head>
+  <body>
     <!-- Top Strip -->
     <div class="top-strip">
-        <div class="container">
-            <div class="top-strip-content">
-                <div class="govt-text">
-                    <span>Govt of Kerala | കേരള സർക്കാർ</span>
-                </div>
-                <div class="language-switcher">
-                    <button class="lang-btn active">English</button>
-                    <button class="lang-btn">മലയാളം</button>
-                </div>
-            </div>
+      <div class="container">
+        <div class="top-strip-content">
+          <div class="govt-text">
+            <span>Govt of Kerala | കേരള സർക്കാർ</span>
+          </div>
+          <div class="language-switcher">
+            <button class="lang-btn active">English</button>
+            <button class="lang-btn">മലയാളം</button>
+          </div>
         </div>
+      </div>
     </div>
 
     <!-- Header -->
     <header>
-        <div class="container">
-            <div class="header-content">
-                <div class="logo">
-                    <span class="logo-icon">🌱</span>
-                    <span class="logo-text">Krishi Kerala</span>
-                </div>
-                <nav>
-                    <ul>
-                        <li><a href="#" class="active">Home</a></li>
-                        <li><a href="#">Schemes</a></li>
-                        <li><a href="#">Advisories</a></li>
-                        <li><a href="#">Market Prices</a></li>
-                        <li><a href="#">Contact</a></li>
-                    </ul>
-                </nav>
-            </div>
+      <div class="container">
+        <div class="header-content">
+          <div class="logo">
+            <span class="logo-icon">🌱</span>
+            <span class="logo-text">KrishiAI</span>
+          </div>
+          <nav>
+            <ul>
+              <li><a href="#" class="active">Home</a></li>
+              <li><a href="#">Schemes</a></li>
+              <li><a href="#">Advisories</a></li>
+              <li><a href="#">Market Prices</a></li>
+              <li><a href="#">Contact</a></li>
+            </ul>
+          </nav>
         </div>
+      </div>
     </header>
 
     <!-- Hero Section with Background Image -->
     <section class="hero">
-        <div class="hero-content">
-            <h1>Kerala Agricultural Assistance Portal</h1>
-            <p>Empowering farmers with AI-driven solutions, real-time advisories, and government support for sustainable agriculture.</p>
-            <div class="hero-buttons">
-                <button class="btn btn-primary">Farmer Login</button>
-                <button class="btn btn-secondary">Explore Schemes</button>
-            </div>
+      <div class="hero-content">
+        <h1>Kerala Agricultural Assistance Portal</h1>
+        <p>
+          Empowering farmers with AI-driven solutions, real-time advisories, and
+          government support for sustainable agriculture.
+        </p>
+        <div class="hero-buttons">
+          <button class="btn btn-primary">
+            <a href="./login.html" class="active">Farmer Login</a>
+          </button>
+          <button class="btn btn-secondary">Explore Schemes</button>
         </div>
+      </div>
     </section>
 
     <!-- Query Interface -->
     <section class="query-interface">
-        <div class="container">
-            <h2 class="section-title">Ask Your Agricultural Question</h2>
-            
-            <div class="input-methods">
-                <div class="input-btn active">
-                    <i>🎤</i>
-                    <span>Voice Query</span>
-                </div>
-                <div class="input-btn">
-                    <i>📝</i>
-                    <span>Text Query</span>
-                </div>
-                <div class="input-btn">
-                    <i>📷</i>
-                    <span>Image Upload</span>
-                </div>
-            </div>
-            
-            <div class="query-box">
-                <textarea class="query-input" placeholder="Ask your question in Malayalam... Example: 'Which pesticide for leaf spot in my banana?'"></textarea>
-            </div>
-            
-            <div class="action-buttons">
-                <button class="btn btn-primary">Submit Question</button>
-                <button class="btn btn-secondary">Upload Image</button>
-            </div>
+      <div class="container">
+        <h2 class="section-title">Ask Your Agricultural Question</h2>
+
+        <div class="input-methods">
+          <div class="input-btn active">
+            <i>🎤</i>
+            <span>Voice Query</span>
+          </div>
+          <div class="input-btn">
+            <i>📝</i>
+            <span>Text Query</span>
+          </div>
+          <div class="input-btn">
+            <i>📷</i>
+            <span>Image Upload</span>
+          </div>
         </div>
+
+        <div class="query-box">
+          <textarea
+            class="query-input"
+            placeholder="Ask your question in Malayalam... Example: 'Which pesticide for leaf spot in my banana?'"
+          ></textarea>
+        </div>
+
+        <div class="action-buttons">
+          <button class="btn btn-primary">Submit Question</button>
+          <button class="btn btn-secondary">Upload Image</button>
+        </div>
+      </div>
     </section>
 
     <!-- Features Section -->
     <section class="features">
-        <div class="container">
-            <h2 class="section-title">Our Services</h2>
-            
-            <div class="features-grid">
-                <div class="feature-card">
-                    <div class="feature-icon"><i class="fas fa-seedling"></i></div>
-                    <h3>Crop Advisory</h3>
-                    <p>Get expert advice on crop selection, planting techniques, and best practices for maximum yield.</p>
-                </div>
-                
-                <div class="feature-card">
-                    <div class="feature-icon"><i class="fas fa-tint"></i></div>
-                    <h3>Irrigation Support</h3>
-                    <p>Learn about efficient water management techniques and government irrigation schemes.</p>
-                </div>
-                
-                <div class="feature-card">
-                    <div class="feature-icon"><i class="fas fa-bug"></i></div>
-                    <h3>Pest Management</h3>
-                    <p>Identify pests and diseases and get recommendations for eco-friendly control measures.</p>
-                </div>
-                
-                <div class="feature-card">
-                    <div class="feature-icon"><i class="fas fa-rupee-sign"></i></div>
-                    <h3>Market Prices</h3>
-                    <p>Access real-time market prices for your produce and find the best selling opportunities.</p>
-                </div>
-            </div>
+      <div class="container">
+        <h2 class="section-title">Our Services</h2>
+
+        <div class="features-grid">
+          <div class="feature-card">
+            <div class="feature-icon"><i class="fas fa-seedling"></i></div>
+            <h3>Crop Advisory</h3>
+            <p>
+              Get expert advice on crop selection, planting techniques, and best
+              practices for maximum yield.
+            </p>
+          </div>
+
+          <div class="feature-card">
+            <div class="feature-icon"><i class="fas fa-tint"></i></div>
+            <h3>Irrigation Support</h3>
+            <p>
+              Learn about efficient water management techniques and government
+              irrigation schemes.
+            </p>
+          </div>
+
+          <div class="feature-card">
+            <div class="feature-icon"><i class="fas fa-bug"></i></div>
+            <h3>Pest Management</h3>
+            <p>
+              Identify pests and diseases and get recommendations for
+              eco-friendly control measures.
+            </p>
+          </div>
+
+          <div class="feature-card">
+            <div class="feature-icon"><i class="fas fa-rupee-sign"></i></div>
+            <h3>Market Prices</h3>
+            <p>
+              Access real-time market prices for your produce and find the best
+              selling opportunities.
+            </p>
+          </div>
         </div>
+      </div>
     </section>
 
     <!-- Advanced Features Section -->
     <section class="advanced-features">
-        <div class="container">
-            <h2 class="section-title">Advanced Features</h2>
-            
-            <div class="feature-tabs">
-                <div class="feature-tab active" data-tab="advisory">Real-Time Advisory</div>
-                <div class="feature-tab" data-tab="recommendation">Smart Recommendations</div>
-                <div class="feature-tab" data-tab="market">Market Values</div>
-                <div class="feature-tab" data-tab="disease">Disease Detection</div>
-            </div>
-            
-            <div class="feature-content active" id="advisory-content">
-                <h3><i class="fas fa-cloud-sun"></i> Real-Time Crop, Soil & Weather Advisory</h3>
-                <div class="content-grid">
-                    <div class="content-item">
-                        <h4><i class="fas fa-cloud-rain"></i> Weather Forecast</h4>
-                        <p>Get accurate 7-day weather forecasts tailored to your specific location for better farming decisions.</p>
-                        <p><strong>Today:</strong> Moderate rainfall expected in the afternoon</p>
-                    </div>
-                    <div class="content-item">
-                        <h4><i class="fas fa-seedling"></i> Crop Advisory</h4>
-                        <p>Personalized advice based on your crops, growth stage, and local conditions.</p>
-                        <p><strong>Current:</strong> Rice crops in flowering stage need careful water management</p>
-                    </div>
-                    <div class="content-item">
-                        <h4><i class="fas fa-cubes"></i> Soil Health</h4>
-                        <p>Monitor soil moisture, nutrient levels, and get recommendations for soil improvement.</p>
-                        <p><strong>Alert:</strong> Soil pH levels slightly acidic in your region - consider adding lime</p>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="feature-content" id="recommendation-content">
-                <h3><i class="fas fa-robot"></i> Smart Recommendations</h3>
-                <div class="content-grid">
-                    <div class="content-item">
-                        <h4><i class="fas fa-cube"></i> Fertilizer Recommendations</h4>
-                        <p>Get precise fertilizer suggestions based on your soil test results and crop requirements.</p>
-                        <p><strong>For your paddy field:</strong> 50kg N, 25kg P₂O₅, 25kg K₂O per acre</p>
-                    </div>
-                    <div class="content-item">
-                        <h4><i class="fas fa-vial"></i> Soil Health Advisory</h4>
-                        <p>Detailed analysis of your soil health with customized improvement plans.</p>
-                        <p><strong>Recommendation:</strong> Add organic compost to improve soil structure</p>
-                    </div>
-                    <div class="content-item">
-                        <h4><i class="fas fa-seedling"></i> Seed Selection</h4>
-                        <p>Choose the best seeds for your soil type, climate conditions, and market demand.</p>
-                        <p><strong>This season:</strong> Consider Jaya variety for rice cultivation</p>
-                    </div>
-                    <div class="content-item">
-                        <h4><i class="fas fa-tint"></i> Water Management</h4>
-                        <p>Optimize irrigation schedules and methods to conserve water and improve yield.</p>
-                        <p><strong>Advisory:</strong> Switch to drip irrigation for vegetable crops</p>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="feature-content" id="market-content">
-                <h3><i class="fas fa-chart-line"></i> Regional Market Values</h3>
-                <div class="region-selector">
-                    <div class="region-btn active" data-region="all">All Regions</div>
-                    <div class="region-btn" data-region="thiruvananthapuram">Thiruvananthapuram</div>
-                    <div class="region-btn" data-region="ernakulam">Ernakulam</div>
-                    <div class="region-btn" data-region="thrissur">Thrissur</div>
-                    <div class="region-btn" data-region="kannur">Kannur</div>
-                </div>
-                
-                <table class="price-table">
-                    <thead>
-                        <tr>
-                            <th>Crop</th>
-                            <th>Thiruvananthapuram (₹/kg)</th>
-                            <th>Ernakulam (₹/kg)</th>
-                            <th>Thrissur (₹/kg)</th>
-                            <th>Kannur (₹/kg)</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>Rice</td>
-                            <td>32</td>
-                            <td>30</td>
-                            <td>31</td>
-                            <td>33</td>
-                        </tr>
-                        <tr>
-                            <td>Coconut</td>
-                            <td>18</td>
-                            <td>17</td>
-                            <td>16</td>
-                            <td>19</td>
-                        </tr>
-                        <tr>
-                            <td>Banana</td>
-                            <td>28</td>
-                            <td>26</td>
-                            <td>25</td>
-                            <td>27</td>
-                        </tr>
-                        <tr>
-                            <td>Black Pepper</td>
-                            <td>420</td>
-                            <td>415</td>
-                            <td>425</td>
-                            <td>418</td>
-                        </tr>
-                        <tr>
-                            <td>Rubber</td>
-                            <td>170</td>
-                            <td>168</td>
-                            <td>172</td>
-                            <td>169</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-            
-            <div class="feature-content" id="disease-content">
-                <h3><i class="fas fa-camera"></i> Image-Based Crop Disease Detection</h3>
-                <div class="upload-area">
-                    <div class="upload-icon">
-                        <i class="fas fa-cloud-upload-alt"></i>
-                    </div>
-                    <p>Upload an image of your crop for instant disease detection</p>
-                    <p class="small">Supported formats: JPG, PNG | Max size: 5MB</p>
-                    <button class="btn btn-primary">Select Image</button>
-                </div>
-                
-                <div class="result-area">
-                    <h4>Detection Results Will Appear Here</h4>
-                    <p>After uploading an image, our AI system will analyze it and provide:</p>
-                    <ul>
-                        <li>Disease identification</li>
-                        <li>Severity assessment</li>
-                        <li>Treatment recommendations</li>
-                        <li>Prevention strategies</li>
-                    </ul>
-                </div>
-            </div>
+      <div class="container">
+        <h2 class="section-title">Advanced Features</h2>
+
+        <div class="feature-tabs">
+          <div class="feature-tab active" data-tab="advisory">
+            Real-Time Advisory
+          </div>
+          <div class="feature-tab" data-tab="recommendation">
+            Smart Recommendations
+          </div>
+          <div class="feature-tab" data-tab="market">Market Values</div>
+          <div class="feature-tab" data-tab="disease">Disease Detection</div>
         </div>
+
+        <div class="feature-content active" id="advisory-content">
+          <h3>
+            <i class="fas fa-cloud-sun"></i> Real-Time Crop, Soil & Weather
+            Advisory
+          </h3>
+          <div class="content-grid">
+            <div class="content-item">
+              <h4><i class="fas fa-cloud-rain"></i> Weather Forecast</h4>
+              <p>
+                Get accurate 7-day weather forecasts tailored to your specific
+                location for better farming decisions.
+              </p>
+              <p>
+                <strong>Today:</strong> Moderate rainfall expected in the
+                afternoon
+              </p>
+            </div>
+            <div class="content-item">
+              <h4><i class="fas fa-seedling"></i> Crop Advisory</h4>
+              <p>
+                Personalized advice based on your crops, growth stage, and local
+                conditions.
+              </p>
+              <p>
+                <strong>Current:</strong> Rice crops in flowering stage need
+                careful water management
+              </p>
+            </div>
+            <div class="content-item">
+              <h4><i class="fas fa-cubes"></i> Soil Health</h4>
+              <p>
+                Monitor soil moisture, nutrient levels, and get recommendations
+                for soil improvement.
+              </p>
+              <p>
+                <strong>Alert:</strong> Soil pH levels slightly acidic in your
+                region - consider adding lime
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="feature-content" id="recommendation-content">
+          <h3><i class="fas fa-robot"></i> Smart Recommendations</h3>
+          <div class="content-grid">
+            <div class="content-item">
+              <h4><i class="fas fa-cube"></i> Fertilizer Recommendations</h4>
+              <p>
+                Get precise fertilizer suggestions based on your soil test
+                results and crop requirements.
+              </p>
+              <p>
+                <strong>For your paddy field:</strong> 50kg N, 25kg P₂O₅, 25kg
+                K₂O per acre
+              </p>
+            </div>
+            <div class="content-item">
+              <h4><i class="fas fa-vial"></i> Soil Health Advisory</h4>
+              <p>
+                Detailed analysis of your soil health with customized
+                improvement plans.
+              </p>
+              <p>
+                <strong>Recommendation:</strong> Add organic compost to improve
+                soil structure
+              </p>
+            </div>
+            <div class="content-item">
+              <h4><i class="fas fa-seedling"></i> Seed Selection</h4>
+              <p>
+                Choose the best seeds for your soil type, climate conditions,
+                and market demand.
+              </p>
+              <p>
+                <strong>This season:</strong> Consider Jaya variety for rice
+                cultivation
+              </p>
+            </div>
+            <div class="content-item">
+              <h4><i class="fas fa-tint"></i> Water Management</h4>
+              <p>
+                Optimize irrigation schedules and methods to conserve water and
+                improve yield.
+              </p>
+              <p>
+                <strong>Advisory:</strong> Switch to drip irrigation for
+                vegetable crops
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="feature-content" id="market-content">
+          <h3><i class="fas fa-chart-line"></i> Regional Market Values</h3>
+          <div class="region-selector">
+            <div class="region-btn active" data-region="all">All Regions</div>
+            <div class="region-btn" data-region="thiruvananthapuram">
+              Thiruvananthapuram
+            </div>
+            <div class="region-btn" data-region="ernakulam">Ernakulam</div>
+            <div class="region-btn" data-region="thrissur">Thrissur</div>
+            <div class="region-btn" data-region="kannur">Kannur</div>
+          </div>
+
+          <table class="price-table">
+            <thead>
+              <tr>
+                <th>Crop</th>
+                <th>Thiruvananthapuram (₹/kg)</th>
+                <th>Ernakulam (₹/kg)</th>
+                <th>Thrissur (₹/kg)</th>
+                <th>Kannur (₹/kg)</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Rice</td>
+                <td>32</td>
+                <td>30</td>
+                <td>31</td>
+                <td>33</td>
+              </tr>
+              <tr>
+                <td>Coconut</td>
+                <td>18</td>
+                <td>17</td>
+                <td>16</td>
+                <td>19</td>
+              </tr>
+              <tr>
+                <td>Banana</td>
+                <td>28</td>
+                <td>26</td>
+                <td>25</td>
+                <td>27</td>
+              </tr>
+              <tr>
+                <td>Black Pepper</td>
+                <td>420</td>
+                <td>415</td>
+                <td>425</td>
+                <td>418</td>
+              </tr>
+              <tr>
+                <td>Rubber</td>
+                <td>170</td>
+                <td>168</td>
+                <td>172</td>
+                <td>169</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="feature-content" id="disease-content">
+          <h3>
+            <i class="fas fa-camera"></i> Image-Based Crop Disease Detection
+          </h3>
+          <div class="upload-area">
+            <div class="upload-icon">
+              <i class="fas fa-cloud-upload-alt"></i>
+            </div>
+            <p>Upload an image of your crop for instant disease detection</p>
+            <p class="small">Supported formats: JPG, PNG | Max size: 5MB</p>
+            <button class="btn btn-primary">Select Image</button>
+          </div>
+
+          <div class="result-area">
+            <h4>Detection Results Will Appear Here</h4>
+            <p>
+              After uploading an image, our AI system will analyze it and
+              provide:
+            </p>
+            <ul>
+              <li>Disease identification</li>
+              <li>Severity assessment</li>
+              <li>Treatment recommendations</li>
+              <li>Prevention strategies</li>
+            </ul>
+          </div>
+        </div>
+      </div>
     </section>
 
     <!-- Sample Response Section -->
     <section class="response-section">
-        <div class="container">
-            <h2 class="section-title">Sample Response</h2>
-            
-            <div class="response-card">
-                <div class="response-header">
-                    <h3>Question: "Which pesticide for leaf spot in my banana?"</h3>
-                    <span>Location: Thrissur | Season: Monsoon</span>
-                </div>
-                
-                <div class="response-content">
-                    <p>For leaf spot in banana plants, we recommend the following approach:</p>
-                    
-                    <h4>Recommended Treatment</h4>
-                    <ul>
-                        <li>Chlorothalonil (0.2%) or Mancozeb (0.2%)</li>
-                        <li>Apply as a foliar spray at 15-day intervals</li>
-                        <li>Ensure thorough coverage of both sides of leaves</li>
-                    </ul>
-                    
-                    <h4>Cultural Practices</h4>
-                    <ul>
-                        <li>Remove and destroy severely infected leaves</li>
-                        <li>Improve air circulation by proper spacing</li>
-                        <li>Avoid overhead irrigation to reduce leaf wetness</li>
-                    </ul>
-                    
-                    <h4>Local Advisory</h4>
-                    <p>Based on your location in Thrissur, we recommend contacting the Krishi Vigyan Kendra for specific regional guidance. Current weather conditions (monsoon) may require adjusted application timing.</p>
-                </div>
-            </div>
+      <div class="container">
+        <h2 class="section-title">Sample Response</h2>
+
+        <div class="response-card">
+          <div class="response-header">
+            <h3>Question: "Which pesticide for leaf spot in my banana?"</h3>
+            <span>Location: Thrissur | Season: Monsoon</span>
+          </div>
+
+          <div class="response-content">
+            <p>
+              For leaf spot in banana plants, we recommend the following
+              approach:
+            </p>
+
+            <h4>Recommended Treatment</h4>
+            <ul>
+              <li>Chlorothalonil (0.2%) or Mancozeb (0.2%)</li>
+              <li>Apply as a foliar spray at 15-day intervals</li>
+              <li>Ensure thorough coverage of both sides of leaves</li>
+            </ul>
+
+            <h4>Cultural Practices</h4>
+            <ul>
+              <li>Remove and destroy severely infected leaves</li>
+              <li>Improve air circulation by proper spacing</li>
+              <li>Avoid overhead irrigation to reduce leaf wetness</li>
+            </ul>
+
+            <h4>Local Advisory</h4>
+            <p>
+              Based on your location in Thrissur, we recommend contacting the
+              Krishi Vigyan Kendra for specific regional guidance. Current
+              weather conditions (monsoon) may require adjusted application
+              timing.
+            </p>
+          </div>
         </div>
+      </div>
     </section>
 
     <!-- Footer -->
     <footer>
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-column">
-                    <h3>Krishi Kerala</h3>
-                    <p>Government of Kerala's initiative for agricultural development and farmer welfare.</p>
-                </div>
-                
-                <div class="footer-column">
-                    <h3>Quick Links</h3>
-                    <ul>
-                        <li><a href="#">Farmer Registration</a></li>
-                        <li><a href="#">Crop Calendar</a></li>
-                        <li><a href="#">Weather Advisory</a></li>
-                        <li><a href="#">Soil Health Card</a></li>
-                    </ul>
-                </div>
-                
-                <div class="footer-column">
-                    <h3>Schemes</h3>
-                    <ul>
-                        <li><a href="#">Subsidy Programs</a></li>
-                        <li><a href="#">Crop Insurance</a></li>
-                        <li><a href="#">Loan Facilities</a></li>
-                        <li><a href="#">Training Programs</a></li>
-                    </ul>
-                </div>
-                
-                <div class="footer-column">
-                    <h3>Contact Us</h3>
-                    <ul>
-                        <li><i class="fas fa-phone"></i> 0471-1234567</li>
-                        <li><i class="fas fa-envelope"></i> support@krishikerala.org</li>
-                        <li><i class="fas fa-map-marker-alt"></i> Agriculture Directorate, Thiruvananthapuram</li>
-                    </ul>
-                </div>
-            </div>
-            
-            <div class="copyright">
-                <p>&copy; 2023 Government of Kerala, Department of Agriculture. All rights reserved.</p>
-            </div>
+      <div class="container">
+        <div class="footer-content">
+          <div class="footer-column">
+            <h3>Krishi Kerala</h3>
+            <p>
+              Government of Kerala's initiative for agricultural development and
+              farmer welfare.
+            </p>
+          </div>
+
+          <div class="footer-column">
+            <h3>Quick Links</h3>
+            <ul>
+              <li><a href="#">Farmer Registration</a></li>
+              <li><a href="#">Crop Calendar</a></li>
+              <li><a href="#">Weather Advisory</a></li>
+              <li><a href="#">Soil Health Card</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-column">
+            <h3>Schemes</h3>
+            <ul>
+              <li><a href="#">Subsidy Programs</a></li>
+              <li><a href="#">Crop Insurance</a></li>
+              <li><a href="#">Loan Facilities</a></li>
+              <li><a href="#">Training Programs</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-column">
+            <h3>Contact Us</h3>
+            <ul>
+              <li><i class="fas fa-phone"></i> 0471-1234567</li>
+              <li><i class="fas fa-envelope"></i> support@krishikerala.org</li>
+              <li>
+                <i class="fas fa-map-marker-alt"></i> Agriculture Directorate,
+                Thiruvananthapuram
+              </li>
+            </ul>
+          </div>
         </div>
+
+        <div class="copyright">
+          <p>
+            &copy; 2023 Government of Kerala, Department of Agriculture. All
+            rights reserved.
+          </p>
+        </div>
+      </div>
     </footer>
 
     <script>
-        // Simple language switcher functionality
-        document.querySelectorAll('.lang-btn').forEach(button => {
-            button.addEventListener('click', function() {
-                document.querySelectorAll('.lang-btn').forEach(btn => {
-                    btn.classList.remove('active');
-                });
-                this.classList.add('active');
-                
-                // In a real implementation, this would change the actual language
-                alert('Language changed to: ' + this.textContent);
-            });
-        });
+      // Simple language switcher functionality
+      document.querySelectorAll(".lang-btn").forEach((button) => {
+        button.addEventListener("click", function () {
+          document.querySelectorAll(".lang-btn").forEach((btn) => {
+            btn.classList.remove("active");
+          });
+          this.classList.add("active");
 
-        // Feature tabs functionality
-        const featureTabs = document.querySelectorAll('.feature-tab');
-        const featureContents = document.querySelectorAll('.feature-content');
-        
-        featureTabs.forEach(tab => {
-            tab.addEventListener('click', () => {
-                const tabId = tab.getAttribute('data-tab');
-                
-                // Remove active class from all tabs and contents
-                featureTabs.forEach(t => t.classList.remove('active'));
-                featureContents.forEach(c => c.classList.remove('active'));
-                
-                // Add active class to clicked tab and corresponding content
-                tab.classList.add('active');
-                document.getElementById(`${tabId}-content`).classList.add('active');
-            });
+          // In a real implementation, this would change the actual language
+          alert("Language changed to: " + this.textContent);
         });
+      });
 
-        // Region selector functionality
-        const regionButtons = document.querySelectorAll('.region-btn');
-        
-        regionButtons.forEach(button => {
-            button.addEventListener('click', () => {
-                regionButtons.forEach(btn => btn.classList.remove('active'));
-                button.classList.add('active');
-                
-                // In a real implementation, this would filter the market data
-                const region = button.getAttribute('data-region');
-                alert('Showing market data for: ' + region);
-            });
+      // Feature tabs functionality
+      const featureTabs = document.querySelectorAll(".feature-tab");
+      const featureContents = document.querySelectorAll(".feature-content");
+
+      featureTabs.forEach((tab) => {
+        tab.addEventListener("click", () => {
+          const tabId = tab.getAttribute("data-tab");
+
+          // Remove active class from all tabs and contents
+          featureTabs.forEach((t) => t.classList.remove("active"));
+          featureContents.forEach((c) => c.classList.remove("active"));
+
+          // Add active class to clicked tab and corresponding content
+          tab.classList.add("active");
+          document.getElementById(`${tabId}-content`).classList.add("active");
         });
+      });
 
-        // Input method selection
-        const inputButtons = document.querySelectorAll('.input-btn');
-        
-        inputButtons.forEach(button => {
-            button.addEventListener('click', () => {
-                inputButtons.forEach(btn => btn.classList.remove('active'));
-                button.classList.add('active');
-            });
+      // Region selector functionality
+      const regionButtons = document.querySelectorAll(".region-btn");
+
+      regionButtons.forEach((button) => {
+        button.addEventListener("click", () => {
+          regionButtons.forEach((btn) => btn.classList.remove("active"));
+          button.classList.add("active");
+
+          // In a real implementation, this would filter the market data
+          const region = button.getAttribute("data-region");
+          alert("Showing market data for: " + region);
         });
+      });
 
-        // Image upload simulation
-        document.querySelector('.upload-area').addEventListener('click', function() {
-            alert('In a real implementation, this would open a file selection dialog');
+      // Input method selection
+      const inputButtons = document.querySelectorAll(".input-btn");
+
+      inputButtons.forEach((button) => {
+        button.addEventListener("click", () => {
+          inputButtons.forEach((btn) => btn.classList.remove("active"));
+          button.classList.add("active");
+        });
+      });
+
+      // Image upload simulation
+      document
+        .querySelector(".upload-area")
+        .addEventListener("click", function () {
+          alert(
+            "In a real implementation, this would open a file selection dialog"
+          );
         });
     </script>
-</body>
+  </body>
 </html>
